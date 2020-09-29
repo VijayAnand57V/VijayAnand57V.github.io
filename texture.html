@@ -115,26 +115,7 @@ function initialize()
 	let geometry1 = new THREE.PlaneBufferGeometry(1,1, 4,4);
 	let position = new THREE.Vector2( 0, 1, 0 );
 	let loader = new THREE.TextureLoader();
-	let texture = 	loader.load(
-	// resource URL
-	'images/menu.jpeg',
-
-	// onLoad callback
-	function ( image ) {
-		// use the image, e.g. draw part of it on a canvas
-		var canvas = document.createElement( 'canvas' );
-		canvas.height = 600
-		canvas.width = 600
-	},
-
-	// onProgress callback currently not supported
-	undefined,
-
-	// onError callback
-	function () {
-		console.error( 'An error happened.' );
-	}
-);
+	let texture = 	loader.load( 'images/earth.jpg', render );
 	let material1 = new THREE.MeshBasicMaterial( { map: texture } );
 	mesh1 = new THREE.Mesh( geometry1,material1 );
 	mesh1.rotation.x = -Math.PI/2;
