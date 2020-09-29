@@ -123,8 +123,8 @@ function initialize()
 	function ( image ) {
 		// use the image, e.g. draw part of it on a canvas
 		var canvas = document.createElement( 'canvas' );
-		var context = canvas.getContext( '2d' );
-		context.drawImage( image, 100, 100 );
+		canvas.height = 600
+		canvas.width = 600
 	},
 
 	// onProgress callback currently not supported
