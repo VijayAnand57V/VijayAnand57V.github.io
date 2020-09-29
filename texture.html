@@ -115,9 +115,27 @@ function initialize()
 	let geometry1 = new THREE.PlaneBufferGeometry(1,1, 4,4);
 	let position = new THREE.Vector2( 0, 1, 0 );
 	let loader = new THREE.TextureLoader();
-	let texture = loader.load( 'images/menu.jpeg', render );
-	texture.width= 100
-	texture.height = 900
+	let texture = 	loader.load(
+	// resource URL
+	'images/menu.jpeg',
+
+	// onLoad callback
+	function ( image ) {
+		// use the image, e.g. draw part of it on a canvas
+		var canvas = document.createElement( 'canvas' );
+		var context = canvas.getContext( '2d' );
+		context.drawImage( image, 100, 100 );
+	},
+
+	// onProgress callback currently not supported
+	undefined,
+
+	// onError callback
+	function () {
+		console.error( 'An error happened.' );
+	}
+);
+
 	let material1 = new THREE.MeshBasicMaterial( { map: texture } );
 	
 	mesh1 = new THREE.Mesh( geometry1, material1 );
