@@ -49,7 +49,7 @@ function initialize()
 		alpha: true
 	});
 	renderer.setClearColor(new THREE.Color('lightgrey'), 0)
-	renderer.setSize( 640, 780 );
+	renderer.setSize( 640, 480 );
 	renderer.domElement.style.position = 'absolute'
 	renderer.domElement.style.top = '0px'
 	renderer.domElement.style.left = '0px'
@@ -113,10 +113,12 @@ function initialize()
 	})
 
 	let geometry1 = new THREE.PlaneBufferGeometry(1,1, 4,4);
+	let position = new THREE.Vector2( 0, 1, 0 );
 	let loader = new THREE.TextureLoader();
 	let texture = loader.load( 'images/menu.jpeg', render );
+	texture.width= 500
+	texture.height = 500
 	let material1 = new THREE.MeshBasicMaterial( { map: texture } );
-
 	
 	mesh1 = new THREE.Mesh( geometry1, material1 );
 	mesh1.rotation.x = -Math.PI/2;
