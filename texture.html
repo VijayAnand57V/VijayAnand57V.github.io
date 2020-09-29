@@ -116,8 +116,8 @@ function initialize()
 	let position = new THREE.Vector2( 0, 1, 0 );
 	let loader = new THREE.TextureLoader();
 	let texture = loader.load( 'images/menu.jpeg', render );
-	texture.width= 500
-	texture.height = 500
+	texture.width= 100
+	texture.height = 900
 	let material1 = new THREE.MeshBasicMaterial( { map: texture } );
 	
 	mesh1 = new THREE.Mesh( geometry1, material1 );
