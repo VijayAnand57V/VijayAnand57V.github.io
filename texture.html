@@ -112,7 +112,7 @@ function initialize()
 		type: 'pattern', patternUrl: "data/hiro.patt",
 	})
 
-	let geometry1 = new THREE.PlaneBufferGeometry(1,1, 4,4);
+// 	let geometry1 = new THREE.PlaneBufferGeometry(1,1, 4,4);
 	let position = new THREE.Vector2( 0, 1, 0 );
 	let loader = new THREE.TextureLoader();
 	let texture = 	loader.load(
@@ -135,6 +135,11 @@ function initialize()
 		console.error( 'An error happened.' );
 	}
 );
+	let material1 = new THREE.MeshBasicMaterial( { map: texture } );
+	mesh1 = new THREE.Mesh( material1 );
+// 	mesh1.rotation.x = -Math.PI/2;
+	
+	markerRoot1.add( mesh1 );
 
 }
 
